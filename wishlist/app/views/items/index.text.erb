@@ -1,0 +1,10 @@
+<% @items.each do |item| %>
+<%= item.name %>
+<%= number_to_currency item.max_price %>
+<%= item.notes %>
+<%= item.model_number %>
+<%= item.url %>
+
+---------------
+
+<% end %>

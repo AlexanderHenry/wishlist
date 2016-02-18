@@ -5,6 +5,16 @@ class ItemsController < ApplicationController
 		#params[:list_id] id of the list
 		@list = current_user.lists.find params[:list_id]
 		@items = @list.items
+
+    # Support formats without writing formats
+    respond_to do |format|
+      format.html
+      format.json
+      format.text
+      format.xml {render xml: @items}
+
+    end
+
 	end
 
   # GET /lists/1
